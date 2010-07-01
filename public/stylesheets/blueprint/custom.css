@@ -3,7 +3,7 @@
 }
 
 body {
-  background: #cff;
+  background: #97E0FF;
 }
 
 #header {
@@ -130,4 +130,56 @@ td.sidebar {
 .profile img.gravatar {
   border: 1px solid #999;
   margin-bottom: -15px;
+}
+
+/* Signup Form */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* Error Messages */
+.fieldWithErrors {
+  padding: 2px;
+  background-color: #fff6bf;
+  display: table;
+}
+
+.fieldWithErrors label {
+  color: #000;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+
+  background-color: #fff6bf;
+  color: #514721;
+  border-top-color: #ffd324;
+  border-right-color: #ffd324;
+  border-bottom-color: #ffd324;
+  border-left-color: #ffd324;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
 }

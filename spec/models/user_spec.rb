@@ -103,6 +103,7 @@ describe "password encryption" do
 	it "should set the encrypted password" do
       @user.encrypted_password.should_not be_blank
     end
+
 	
 describe "has_password? method" do
 
