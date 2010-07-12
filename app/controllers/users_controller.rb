@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  before_filter :authenticate, :only => [:index, :edit, :update, :destroy]
-  before_filter :correct_user, :only => [:edit, :update]
-  before_filter :admin_user,   :only => :destroy
+  before_filter :authenticate, :only => [:index, :edit, :update, :destroy] #Only authenticated users can see these actions
+  before_filter :correct_user, :only => [:edit, :update]					#Only the logged in user can see these actions
+  before_filter :admin_user,   :only => :destroy							#Only the administrator can see/use this action
 
   def new
     @user = User.new
@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-	  #UserMailer.deliver_registration_confirmation(@user)
+	  #UserMailer.deliver_welcome_email(@user)             #Breaks
 	  sign_in @user
 	  flash[:success] = "Successfully registered! Welcome to Scribelix!"
       redirect_to @user
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    @microposts = @user.microposts.paginate(:page => params[:page])
+	@microposts = @user.microposts.paginate(:page => params[:page])
     @title = CGI.escapeHTML(@user.name)
   end
   

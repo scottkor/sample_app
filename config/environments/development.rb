@@ -1,6 +1,8 @@
 # Settings specified here will take precedence over those in config/environment.rb
 
 
+require "smtp_tls"
+
 # In the development environment your application's code is reloaded on
 # every request.  This slows down response time but is perfect for development
 # since you don't have to restart the webserver when you make code changes.
@@ -21,11 +23,13 @@ config.action_mailer.raise_delivery_errors = true
 config.action_mailer.delivery_method = :smtp
 
 # these options are only needed if you choose smtp delivery
-config.action_mailer.smtp_settings = {
-  :address			=>  "smtp.gmail.com",
-  :port				=>	25,
-  :domain			=>	'www.scribelix.com',
-  :authentication	=>	:login,
-  :user_name		=>  "scottkor",
-  :password			=>	'epon18'
+
+
+ActionMailer::Base.smtp_settings = {
+:address => "smtp.gmail.com",
+:port => 587,
+:authentication => :plain,
+:domain => "gmail.com",
+:user_name => "scottkor@gmail.com",
+:password => 'epon18'
 }

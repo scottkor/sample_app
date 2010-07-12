@@ -16,11 +16,14 @@
     <td class="sidebar round">
       <strong>Name</strong> <%= h @user.name %><br />
 	  <strong>Major</strong> <%= h @user.major %> <br />
-	  <strong>Super Power</strong> insert background.superpower <br />
+	  <strong>University</strong> <%= h @user.university %> <br />
+	    <% if @user.university = nil %>
+		<strong>Highschool</strong> <%= h @user.highschool %> <br />
+		<% end %>
       <strong>URL</strong>  <%= link_to user_path(@user), @user %><br />
 	  
 	  <!--
-	  <strong>Microposts</strong> <%= @user.microposts.count %>
+	  <strong>Notes posted</strong> <%= @user.microposts.count %>
 	  -->
 	  
     </td>

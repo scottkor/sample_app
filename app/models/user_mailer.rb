@@ -1,8 +1,9 @@
 class UserMailer < ActionMailer::Base
-  def registration_confirmation(user)
-    recipients   user.email
-	from		"webmaster@example.com"
-	subject		"Thank you for Registering"
-	body		"Hi thank you for registering"
+  def welcome_email(user)
+    recipients    user.email
+    from          "My Awesome Site Notifications <notifications@example.com>"
+    subject       "Welcome to My Awesome Site"
+    sent_on       Time.now
+    body          "Hello thanks"
   end
 end
