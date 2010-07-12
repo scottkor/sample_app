@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100709022744) do
+ActiveRecord::Schema.define(:version => 20100712032854) do
 
   create_table "backgrounds", :force => true do |t|
     t.string   "current_school"
@@ -41,6 +41,11 @@ ActiveRecord::Schema.define(:version => 20100709022744) do
     t.string   "salt"
     t.string   "remember_token"
     t.boolean  "admin",              :default => false
+    t.string   "university"
+    t.string   "highschool"
+    t.string   "major"
+    t.string   "website"
+    t.text     "bio"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

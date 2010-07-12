@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20100708071400
+# Schema version: 20100712032854
 #
 # Table name: users
 #
@@ -12,6 +12,11 @@
 #  salt               :string(255)
 #  remember_token     :string(255)
 #  admin              :boolean
+#  university         :string(255)
+#  highschool         :string(255)
+#  major              :string(255)
+#  website            :string(255)
+#  bio                :text
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
