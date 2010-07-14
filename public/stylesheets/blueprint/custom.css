@@ -1,9 +1,10 @@
 .container {
-  width: 710px;
+  width: 960px;
+  /* border: solid #fff; */
 }
 
 body {
-  background: #97E0FF;
+  background: #256a8e;
 }
 
 #header {
