@@ -19,7 +19,7 @@ Rails::Initializer.run do |config|
   
   config.gem 'will_paginate', :version => '2.3.12'
   
-  config.active_record.observers = :user_observer
+  #config.active_record.observers = :user_observer
   
   
   # config.gem "bj"

@@ -11,16 +11,16 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-	  #UserMailer.deliver_welcome_email(@user)             #Breaks
 	  sign_in @user
 	  flash[:success] = "Successfully registered! Welcome to Scribelix!"
       redirect_to @user
+	  UserMailer.deliver_welcome_email(@user)
     else
       @title = "Sign up"
       render 'new'
     end
   end
-  
+    
   def show
     @user = User.find(params[:id])
 	@microposts = @user.microposts.paginate(:page => params[:page])
