@@ -1,22 +1,29 @@
 # == Schema Information
-# Schema version: 20100709022744
+# Schema version: 20100803031932
 #
 # Table name: microposts
 #
-#  id         :integer         not null, primary key
-#  content    :string(255)
-#  user_id    :integer
-#  created_at :datetime
-#  updated_at :datetime
+#  id          :integer         not null, primary key
+#  content     :string(255)
+#  user_id     :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#  title       :string(255)
+#  category_id :integer
+#  posted      :datetime
 #
 
 class Micropost < ActiveRecord::Base
-  attr_accessible :content
+  attr_accessible :content, :title
   
   belongs_to :user
+  belongs_to :category
   
   validates_presence_of :content, :user_id
   validates_length_of   :content, :maximum => 500
+  
+  validates_presence_of :title, :user_id
+  validates_length_of   :title, :maximum => 400
   
   default_scope :order => 'created_at DESC'
 

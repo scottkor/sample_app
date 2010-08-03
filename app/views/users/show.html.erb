@@ -8,6 +8,7 @@
 	  <%= render 'follow_form' if signed_in? %>
 	  <% unless @user.microposts.empty? %>
         <table class="microposts">
+		  <%= link_to("New Note", url_for(:controller => "microposts", :action => "new"), :class => "signup_button round") %>
           <%= render @microposts %>
         </table>
         <%= will_paginate @microposts %>

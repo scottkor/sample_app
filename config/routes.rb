@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :backgrounds
+	map.resources :pages
+    map.resources :notes
 
-  map.resources :bios
 
 
   # You can have the root of your site routed with map.root 
@@ -10,8 +10,9 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :users, :member => { :following => :get, :followers => :get }
   map.resources :sessions, :only => [:new, :create, :destroy]
-  map.resources :microposts, :only => [:create, :destroy]
+  map.resources :microposts 
   map.resources  :relationships, :only => [:create, :destroy]
+  map.resources :categories, :only => [:new, :create, :destroy]
   
   
   map.signin  '/signin',  :controller => 'sessions', :action => 'new'

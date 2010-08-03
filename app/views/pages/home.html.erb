@@ -3,7 +3,10 @@
     <tr>
       <td class="main">
         <h2 class="micropost">Create a note</h2>
-        <%= render 'pages/micropost_form' %>
+	    <%= link_to("New Note", url_for(:controller => "microposts", :action => "new"), :class => "signup_button round") %>
+
+		
+        
 		<%= render 'pages/feed' %>
       </td>
       <td class="sidebar round">
@@ -20,6 +23,6 @@
       <a href="#">Scribelix</a>
       rails application.
     </p>
-	
+
 	<%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
 <% end %>
